@@ -1,30 +1,45 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="pt">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Курс программирования</title>
+<title>Curso de Programação</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+:root{
+    --azul:#0B3D91;
+    --amarelo:#F5C116;
+    --cinza:#f5f7fa;
+}
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: Arial, sans-serif;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-    background:#f5f7fa;
+    line-height:1.6;
     color:#333;
 }
 
 header{
-    background:#0B3D91;
-    color:white;
-    padding:20px 10%;
+    background:white;
+    position:fixed;
+    width:100%;
+    top:0;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    z-index:1000;
 }
 
 nav{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 20px;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -37,65 +52,74 @@ nav{
 }
 
 .logo img{
-    width:70px;
+    height:55px;
+}
+
+.logo h2{
+    color:var(--azul);
+}
+
+.menu{
+    display:flex;
+    gap:25px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+}
+
+.menu a:hover{
+    color:var(--azul);
 }
 
 .hero{
-    min-height:80vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    background:linear-gradient(135deg,#0B3D91,#1d5bc4);
+    background:linear-gradient(rgba(11,61,145,.9),rgba(11,61,145,.9));
     color:white;
-    padding:50px 20px;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 20px 50px;
 }
 
 .hero-content{
-    max-width:800px;
+    max-width:900px;
+}
+
+.hero img{
+    width:220px;
+    background:white;
+    padding:10px;
+    border-radius:15px;
+    margin-bottom:30px;
 }
 
 .hero h1{
-    font-size:3rem;
+    font-size:3.5rem;
     margin-bottom:20px;
 }
 
 .hero p{
     font-size:1.2rem;
-    margin-bottom:30px;
-}
-
-.btn{
-    display:inline-block;
-    padding:15px 30px;
-    background:#F5C116;
-    color:#000;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
-    transition:0.3s;
-}
-
-.btn:hover{
-    background:#ffd84d;
 }
 
 section{
-    padding:80px 10%;
+    padding:90px 20px;
 }
 
-.section-title{
-    text-align:center;
-    color:#0B3D91;
-    margin-bottom:40px;
-    font-size:2rem;
-}
-
-.about{
-    text-align:center;
-    max-width:900px;
+.container{
+    max-width:1200px;
     margin:auto;
-    line-height:1.8;
+}
+
+.titulo{
+    text-align:center;
+    color:var(--azul);
+    margin-bottom:50px;
+    font-size:2.3rem;
 }
 
 .cards{
@@ -106,9 +130,9 @@ section{
 
 .card{
     background:white;
-    padding:25px;
+    padding:30px;
     border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
     transition:0.3s;
 }
 
@@ -117,120 +141,238 @@ section{
 }
 
 .card h3{
-    color:#0B3D91;
+    color:var(--azul);
     margin-bottom:15px;
 }
 
-.benefits{
-    background:#eef4ff;
+.curso{
+    background:var(--cinza);
 }
 
-.contact{
+.estatisticas{
+    background:var(--azul);
+    color:white;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
     text-align:center;
+}
+
+.stats h2{
+    color:var(--amarelo);
+    font-size:3rem;
 }
 
 footer{
-    background:#0B3D91;
+    background:#071f4d;
     color:white;
     text-align:center;
-    padding:20px;
+    padding:25px;
 }
 
-.highlight{
-    color:#F5C116;
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.2rem;
 }
+
+.menu{
+    display:none;
+}
+
+.hero img{
+    width:150px;
+}
+
+}
+
 </style>
 </head>
 <body>
 
 <header>
-    <nav>
-        <div class="logo">
-           <img src="logo curso com nome.png" alt="Логотип">
-            <h2>Курс программирования</h2>
-        </div>
-    </nav>
+<nav>
+
+<div class="logo">
+<img src="logo curso com nome.png" alt="Logo">
+<h2>Curso de Programação</h2>
+</div>
+
+<div class="menu">
+<a href="#sobre">Sobre</a>
+<a href="#conteudos">Conteúdos</a>
+<a href="#vantagens">Vantagens</a>
+<a href="#contactos">Contactos</a>
+</div>
+
+</nav>
 </header>
 
 <section class="hero">
-    <div class="hero-content">
-        <h1>Изучай <span class="highlight">программирование</span> вместе с нами</h1>
-        <p>
-            Современный курс для начинающих и продвинутых учеников.
-            Создавай сайты, приложения и реальные проекты.
-        </p>
-        <a href="#contact" class="btn">Записаться на курс</a>
-    </div>
+
+<div class="hero-content">
+
+<img src="logo curso com nome.png" alt="Logo">
+
+<h1>Curso de Programação</h1>
+
+<p>
+Aprende a criar websites, aplicações e projetos digitais
+utilizando tecnologias modernas de programação.
+Desenvolve competências essenciais para o futuro.
+</p>
+
+</div>
+
 </section>
 
-<section>
-    <h2 class="section-title">О курсе</h2>
-    <div class="about">
-        <p>
-            Наш курс поможет освоить современные технологии разработки,
-            научиться создавать сайты и приложения, а также получить
-            практический опыт работы над проектами.
-        </p>
-    </div>
+<section id="sobre">
+
+<div class="container">
+
+<h2 class="titulo">Sobre o Curso</h2>
+
+<p style="text-align:center; max-width:850px; margin:auto;">
+Este curso tem como objetivo introduzir os alunos ao mundo
+da programação e das tecnologias digitais. Ao longo do curso,
+os participantes irão desenvolver competências práticas,
+resolver desafios e criar projetos próprios.
+</p>
+
+</div>
+
 </section>
 
-<section>
-    <h2 class="section-title">Программа обучения</h2>
+<section class="curso" id="conteudos">
 
-    <div class="cards">
-        <div class="card">
-            <h3>HTML & CSS</h3>
-            <p>Создание красивых и адаптивных веб-страниц.</p>
-        </div>
+<div class="container">
 
-        <div class="card">
-            <h3>JavaScript</h3>
-            <p>Интерактивность и динамика современных сайтов.</p>
-        </div>
+<h2 class="titulo">Conteúdos do Curso</h2>
 
-        <div class="card">
-            <h3>Python</h3>
-            <p>Один из самых популярных языков программирования.</p>
-        </div>
+<div class="cards">
 
-        <div class="card">
-            <h3>Проекты</h3>
-            <p>Разработка собственных веб-приложений и сайтов.</p>
-        </div>
-    </div>
+<div class="card">
+<h3>HTML5</h3>
+<p>Estrutura e organização de páginas web.</p>
+</div>
+
+<div class="card">
+<h3>CSS3</h3>
+<p>Design moderno e adaptação para dispositivos móveis.</p>
+</div>
+
+<div class="card">
+<h3>JavaScript</h3>
+<p>Interatividade e funcionalidades dinâmicas.</p>
+</div>
+
+<div class="card">
+<h3>Python</h3>
+<p>Programação, lógica e automação.</p>
+</div>
+
+<div class="card">
+<h3>Git & GitHub</h3>
+<p>Gestão de versões e trabalho colaborativo.</p>
+</div>
+
+<div class="card">
+<h3>Projeto Final</h3>
+<p>Desenvolvimento de um projeto completo.</p>
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<section class="benefits">
-    <h2 class="section-title">Почему выбирают нас</h2>
+<section class="estatisticas">
 
-    <div class="cards">
-        <div class="card">
-            <h3>Практика</h3>
-            <p>Много реальных заданий и проектов.</p>
-        </div>
+<div class="container">
 
-        <div class="card">
-            <h3>Поддержка</h3>
-            <p>Помощь преподавателей на каждом этапе обучения.</p>
-        </div>
+<div class="stats">
 
-        <div class="card">
-            <h3>Сертификат</h3>
-            <p>Подтверждение ваших знаний после окончания курса.</p>
-        </div>
-    </div>
+<div>
+<h2>100+</h2>
+<p>Horas de Aprendizagem</p>
+</div>
+
+<div>
+<h2>6</h2>
+<p>Módulos Principais</p>
+</div>
+
+<div>
+<h2>10+</h2>
+<p>Projetos Práticos</p>
+</div>
+
+<div>
+<h2>1</h2>
+<p>Projeto Final</p>
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<section id="contact" class="contact">
-    <h2 class="section-title">Контакты</h2>
+<section id="vantagens">
 
-    <p><strong>Email:</strong> info@example.com</p>
-    <p><strong>Телефон:</strong> +351 XXX XXX XXX</p>
-    <p><strong>Адрес:</strong> Agrupamento de Escolas Pinheiro e Rosa</p>
+<div class="container">
+
+<h2 class="titulo">Vantagens</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Aprendizagem Prática</h3>
+<p>Atividades e exercícios baseados em situações reais.</p>
+</div>
+
+<div class="card">
+<h3>Tecnologias Modernas</h3>
+<p>Ferramentas utilizadas no mercado atual.</p>
+</div>
+
+<div class="card">
+<h3>Projetos Reais</h3>
+<p>Criação de websites e aplicações funcionais.</p>
+</div>
+
+<div class="card">
+<h3>Competências Digitais</h3>
+<p>Preparação para os desafios tecnológicos do futuro.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contactos">
+
+<div class="container">
+
+<h2 class="titulo">Contactos</h2>
+
+<p style="text-align:center;">
+Agrupamento de Escolas Pinheiro e Rosa<br>
+Faro, Portugal
+</p>
+
+</div>
+
 </section>
 
 <footer>
-    <p>© 2025 Курс программирования. Все права защищены.</p>
+© 2025 Curso de Programação | Agrupamento de Escolas Pinheiro e Rosa
 </footer>
 
 </body>
